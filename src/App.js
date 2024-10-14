@@ -1,4 +1,4 @@
-import logo from './deeplogo.png';
+import trns from './translation.webp';
 import './App.css';
 
 function App() {
@@ -12,8 +12,8 @@ function App() {
 }
 function Header() {
   return (
-    <header>
-      <h1 className='App'> Document Translator</h1>
+    <header className='Tophead'>
+      <h1 className='App'><img src={trns} className='App-logo'></img> Document Translator</h1>
     </header>
   );
 }
@@ -30,7 +30,7 @@ function Body () {
 function Footer() {
   return (
     <footer className='Footer'>
-        <small>Powered by &nbsp;<img src={logo} className='App-logo'></img> </small>
+        <small>© 2024  </small>
     </footer>
   );
 }
@@ -38,8 +38,19 @@ function Footer() {
 function Upload() {
   return (
     <form>
-      <input type= "file" accept=".pdf, .docx">
+      Translate to:&nbsp;
+      <select>
+        <option>
+        Select Language
+        </option>
+      </select>
+      <br/>
+      <br/>
+
+      <input type= "file" accept=".pdf, .docx, .pptx">
       </input>
+
+      <button type ="submit">Translate Document</button>
     </form>
   )
 }
