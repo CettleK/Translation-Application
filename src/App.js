@@ -13,7 +13,7 @@ function App() {
 function Header() {
   return (
     <header className='Tophead'>
-      <h1 className='App'><img src={trns} className='App-logo'></img> Document Translator</h1>
+      <h1 className='App'><img src={trns} className='App-logo' alt='A-logo'></img> Document Translator</h1>
     </header>
   );
 }
