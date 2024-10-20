@@ -1,15 +1,47 @@
 import trns from './translation.webp';
 import './App.css';
+import React, { useState, useEffect } from 'react';
 
 function App() {
   return (
     <div>
       <Header/ >
       <Body/ >
+      <Backend/ >
       <Footer/ >
     </div>
   );
 }
+
+function Backend() {
+  
+  const [data, setData] = useState([{}])
+
+  useEffect(() => {
+    fetch("/members").then(
+      res => res.json()
+    ).then(
+      data => {
+        setData(data)
+        console.log(data)
+      }
+    )
+  }, [] )
+
+  return (
+    <div>
+      <h1>Beneath me is the backend test message</h1>
+      {(typeof data.members === 'undefined') ? (
+        <p>Loading...</p>
+      ) : (
+        data.members.map((member, i) => (
+          <p key={i}> {member} </p>
+        ))
+      )}
+    </div>
+  )
+}
+
 function Header() {
   return (
     <header className='Tophead'>
