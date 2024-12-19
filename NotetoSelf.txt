@@ -2,3 +2,5 @@ Added  "proxy": "http://localhost:5000", to line 5 in package.json
 
 Run the python program first, check the local host to see if it is running.
 Run the react program second, to see if the the beack content is visible.
+
+When deploying, remember to change from local host url to deployed url.
